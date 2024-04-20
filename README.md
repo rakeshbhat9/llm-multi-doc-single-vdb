@@ -1,6 +1,8 @@
-## Proof of Concept
+## Proof of Concept - 
 
-1. Create a single collection in ChromaDB vector store with documents covering multiple topics.
-    a. One top
-2. When loading documents in to ChromaDB vector store add topical meta-data
-3. Test whether LLM can retrieve relevant data using meta-data.
+### Can we use LLMs to query documents, covering different topics but stored in same vector db as seperate collections.
+
+Steps:
+1. Create a single instance of ChromaDB vector store with multiple collections each for a distinct topic. - Covered in load-data-into-vectordb.ipynb
+3. Using langchain create a [LOTR](https://python.langchain.com/docs/integrations/retrievers/merger_retriever/) pointed to each collection.
+4. Use various available [Contextual Retrievers](https://python.langchain.com/docs/modules/data_connection/retrievers/contextual_compression/) to get only relevant document from LOTR.
